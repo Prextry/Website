@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Cuates Taqueria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="grain">
+  
+  <header id="main-header" class="header-blur">
+    <div class="header-container">
+      <div class = logo>
+      <img src="images/IMG_0219.jpg">
+      </div>
+      <nav class="nav-links">
+        <button class="nav-link" onclick="scrollToSection('menu')">Menu</button>
+        <button class="nav-link" onclick="scrollToSection('gallery')">Gallery</button>
+        <button class="nav-link" onclick="scrollToSection('reviews')">Reviews</button>
+        <button class="nav-link" onclick="scrollToSection('location')">Location</button>
+      </nav>
+      <button class="btn-primary cart-btn" onclick="openCart()">
+        <i data-lucide="shopping-cart" class="icon-sm"></i> Cart
+        <span id="cart-badge" class="cart-badge hidden">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="img-placeholder hero-bg">
+      <div class="ambient-purple"></div>
+      <div class="ambient-indigo"></div>
+      
+      <div class="hero-camera">
+        <div class="camera-icon-box"><span>📸</span></div>
+        <p class="camera-text">Restaurant Exterior Photo</p>
+      </div>
+      
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-content">
+        <div class="hero-animate status-badge">
+          <span id="status-dot" class="pulse-dot"></span>
+          <span id="status-text" class="status-text">CALCULATING...</span>
+        </div>
+        
+        <h1 class="serif hero-animate-2 hero-title">
+          <span class="title-top">Taqueria</span>
+          <span class="gradient-text title-bottom">Los Cuates</span>
+        </h1>
+        
+        <p class="hero-animate-3 hero-desc">
+          Authentic San Antonio street tacos. Slow-roasted al pastor. House salsas made fresh daily. 732 S Alamo St.
+        </p>
+        
+        <div class="hero-animate-3 hero-actions">
+          <button class="btn-primary hero-btn" onclick="scrollToSection('menu')">
+            Order Now <i data-lucide="arrow-right" class="icon-sm"></i>
+          </button>
+          <button class="btn-ghost hero-btn" onclick="scrollToSection('gallery')">
+            View Gallery
+          </button>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <i data-lucide="chevron-down" class="icon-sm"></i>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-box has-border">
+        <div class="stat-icon">⭐</div>
+        <div class="serif gradient-text stat-num">12+</div>
+        <div class="stat-label">Years on Alamo St</div>
+      </div>
+      <div class="stat-box has-border">
+        <div class="stat-icon">✨</div>
+        <div class="serif gradient-text stat-num">4.9</div>
+        <div class="stat-label">Average Star Rating</div>
+      </div>
+      <div class="stat-box has-border">
+        <div class="stat-icon">🌶️</div>
+        <div class="serif gradient-text stat-num">6</div>
+        <div class="stat-label">Signature Salsas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">🥃</div>
+        <div class="serif gradient-text stat-num">100%</div>
+        <div class="stat-label">Agave Tequila</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="section-header">
+      <p class="section-label">Our Space</p>
+      <h2 class="serif section-title">
+        Step Inside <span class="gradient-text serif italic">Los Cuates</span>
+      </h2>
+    </div>
+    <div id="gallery-grid" class="gallery-grid">
+      </div>
+  </section>
+
+  <div class="purple-divider"></div>
+
+  <section id="menu" class="menu-section">
+    <div class="section-header">
+      <p class="section-label">Curated Menu</p>
+      <h2 class="serif section-title">
+        Order <span class="gradient-text serif italic">Online</span>
+      </h2>
+      <p class="menu-desc">Click any item to customize your order with add-ons and your choice of house salsa.</p>
+    </div>
+
+    <div id="category-tabs" class="category-tabs">
+      </div>
+
+    <div id="menu-grid" class="menu-grid">
+      </div>
+  </section>
+
+  <div class="purple-divider"></div>
+
+  <section id="reviews" class="reviews-section">
+    <div class="section-header">
+      <p class="section-label">What People Say</p>
+      <h2 class="serif section-title">
+        Guest <span class="gradient-text serif italic">Reviews</span>
+      </h2>
+    </div>
+    <div class="reviews-scroll">
+      <div id="reviews-container" class="reviews-container">
+        </div>
+    </div>
+  </section>
+
+  <div class="purple-divider"></div>
+
+  <footer id="location" class="footer-section">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="brand-col">
+          <div class="serif gradient-text footer-brand">Los Cuates</div>
+          <p class="footer-desc">Family-owned taqueria serving authentic San Antonio street food since the early 2000s. Every taco made with love, every salsa from scratch.</p>
+          <div class="social-links">
+            <div class="social-icon">📷</div>
+            <div class="social-icon">📘</div>
+            <div class="social-icon">⭐</div>
+          </div>
+        </div>
+        
+        <div class="hours-col">
+          <p class="section-label footer-label">Hours</p>
+          <div class="hour-row"><span>Monday</span><span class="hour-val">12pm - 10pm</span></div>
+          <div class="hour-row"><span>Tue - Thu</span><span class="hour-val">12pm - 12am</span></div>
+          <div class="hour-row"><span>Fri - Sat</span><span class="hour-val">12pm - 2am</span></div>
+          <div class="hour-row"><span>Sunday</span><span class="hour-val closed">Closed</span></div>
+        </div>
+        
+        <div class="contact-col">
+          <p class="section-label footer-label">Find Us</p>
+          <div class="contact-row">
+            <div class="contact-icon"><i data-lucide="map-pin" class="icon-xs"></i></div>
+            <span class="contact-text">732 S Alamo St<br>San Antonio, TX 78205</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon"><i data-lucide="phone" class="icon-xs"></i></div>
+            <span class="contact-text">+1 210-999-5274</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon"><i data-lucide="clock" class="icon-xs"></i></div>
+            <span id="footer-status" class="contact-text">Checking...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="purple-divider"></div>
+      <div class="footer-bottom">
+        <span>© 2025 Taqueria Los Cuates · 732 S Alamo St, San Antonio TX</span>
+        <span class="made-with">Made with 🌮 in San Antonio</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal-container" class="modal-overlay hidden" onclick="closeModalOnOutsideClick(event)">
+    </div>
+
+  <div id="cart-container" class="cart-wrapper hidden">
+    <div class="cart-overlay" onclick="closeCart()"></div>
+    <div id="cart-panel" class="cart-panel">
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+			
